@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.luv2code.springboot.cruddemo.dao.Policy_Master_DAO;
 import com.luv2code.springboot.cruddemo.entity.Policy_Master;
 
 @RestController
@@ -27,6 +26,7 @@ public class PolicyRestController {
 		Session currentsession = entity_manager.unwrap(Session.class);
 		Query W0RESULT = currentsession.createQuery("from Policy_Master where Policy_Number = :W0POLNUM");
 		W0RESULT.setParameter("W0POLNUM", W0POLNUM);
+		@SuppressWarnings(value = { "unchecked" })
 		List<Policy_Master> W0TEMP = W0RESULT.getResultList();		
 		return W0TEMP.get(0);
 	}

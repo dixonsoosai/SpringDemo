@@ -28,6 +28,7 @@ public class Policy_Master_DAO {
 		Query result = 
 				currentSession.createQuery("from Policy_Master where Policy_Number = :W0POLNUM ");
 		result.setParameter("W0POLNUM", W0POLNUM);
+		@SuppressWarnings(value = { "unchecked" })
 		List<Policy_Master> W0TEMP = result.getResultList();
 		return W0TEMP.get(0);
 	}
